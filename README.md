@@ -17,4 +17,7 @@ Reference links - python prototype project
 - $ uvicorn app.app:app --host 0.0.0.0 --port 8080
 - $ mkdir ml
 - file ml/iris/model.py
-- $ poetry add pandas joblib
+- $ poetry add pandas joblib scikit-learn
+- Run server: $ uvicorn app.app:app --host 0.0.0.0 --port 8080
+- Swagger: http://127.0.0.1:8080/docs
+- Run tests: $ python .\test\test_ml_iris.py 

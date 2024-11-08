@@ -16,8 +16,8 @@ class IrisModel:
     #    if exists. If not, calls the _train_model method and
     #    saves the model
     def __init__(self):
-        self.df = pd.read_csv('iris.csv')
-        self.model_fname_ = 'iris_model.pkl'
+        self.df = pd.read_csv('ml/iris/iris.csv')
+        self.model_fname_ = 'ml/iris/iris_model.pkl'
         try:
             self.model = joblib.load(self.model_fname_)
         except Exception as _:
