@@ -21,3 +21,27 @@ Reference links - python prototype project
 - Run server: $ uvicorn app.app:app --host 0.0.0.0 --port 8080
 - Swagger: http://127.0.0.1:8080/docs
 - Run tests: $ python .\test\test_ml_iris.py 
+
+
+### TypeSpec 
+- $  mkdir tspec | cd tspec
+- $ node --version
+    v20.10.0
+- $ npm -v
+    10.9.0
+- $ npm install -g @typespec/compiler
+- $ code .
+  - Extension: TypeSpec for VS Code 
+    https://typespec.io/docs/introduction/editor/vscode
+  - Extension: vscode-openapi-viewer 
+    https://marketplace.visualstudio.com/items?itemName=AndrewButson.vscode-openapi-viewer
+- Create new TSP Project: $ tsp init
+  - Generic REST API
+  - tspec
+  - Yes for .gitignore
+  - openAPI3 only
+- $ tsp install
+- Add in package.json
+  "scripts": { "start": "tsp compile . --watch" },
+- TYPESCRIPT PlayGround: https://typespec.io/playground
+- 

@@ -1,0 +1,17 @@
+{
+  "name": "tspec",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsp compile . --watch"
+  },
+  "peerDependencies": {
+    "@typespec/compiler": "latest",
+    "@typespec/openapi3": "latest"
+  },
+  "devDependencies": {
+    "@typespec/compiler": "latest",
+    "@typespec/openapi3": "latest"
+  },
+  "private": true
+}
