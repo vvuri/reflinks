@@ -24,6 +24,7 @@ Reference links - python prototype project
 
 
 ### TypeSpec 
+- playground for experiment https://typespec.io/playground/
 - $  mkdir tspec | cd tspec
 - $ node --version
     v20.10.0
@@ -44,4 +45,7 @@ Reference links - python prototype project
 - Add in package.json
   "scripts": { "start": "tsp compile . --watch" },
 - TYPESCRIPT PlayGround: https://typespec.io/playground
-- 
+- Edit file: main.tsp
+- $ npm run start
+- Open file tsp-output/openapi.yaml and copy yaml to https://editor.swagger.io/
+- result -> online Swagger view with REST API 

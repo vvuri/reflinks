@@ -1,5 +1,5 @@
 import "@typespec/http";
-// import "@typespec/rest";
+//import "@typespec/rest";
 import "@typespec/openapi3";
 import "@typespec/versioning";
 
@@ -14,7 +14,7 @@ using TypeSpec.Versioning;
 namespace MLRefLinks;
 
 enum Versions {
-    v1
+   v0, "v0.1",
 }
 
 model Widget {
@@ -33,4 +33,24 @@ model Error {
 //     @get @route("customGet") customGet(): Widget;
 // }
 
+// @get op listEmployees(@query size?: int8 , @query page:int8,
+// @query({format: "csv"}) csv?: string[], ) : Employee[]; 
+// @get op getEmployee(@path empId : int32) : Employee; 
+    
+@post op createEmployee(@body emp : Employee, @header xApiKey : string) : Employee;
+    
+// @get 
+// @route("/status")
+//  op getStatus() : string; 
+    
+model Employee {
+    @maxLength(50)
+    @minLength(10)
+    name : string; 
+    fName : string; 
+    lName : string; 
+    age : int8; 
+    sex : "F" | "M"; 
+}
+    
 
