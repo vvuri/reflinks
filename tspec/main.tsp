@@ -11,7 +11,16 @@ using TypeSpec.Versioning;
 })
 @server("https://vvuri.ru", "endpoint for agent reflinks")
 @versioned(Versions)
-namespace MLRefLinks;
+
+@route("/api")
+namespace MLRefLinks {
+    model Agent {
+        name: string;
+        description: string;
+    }
+
+    op list(): Agent[];
+};
 
 enum Versions {
    v0, "v0.1",
