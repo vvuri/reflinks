@@ -49,3 +49,5 @@ Reference links - python prototype project
 - $ npm run start
 - Open file tsp-output/openapi.yaml and copy yaml to https://editor.swagger.io/
 - result -> online Swagger view with REST API 
+- Result: \tspec\tsp-output\@typespec\openapi3\openapi.v0.1.yaml
+- Can generate server code for Python, Go, Java, Nodejs

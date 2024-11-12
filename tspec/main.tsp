@@ -32,7 +32,8 @@ namespace MLRefLinks {
     }
 
     model NameDesc{
-        @doc("the name of the name")
+        @doc("the name")
+        @maxLength(20)
         name: string;
         @doc("short descriptio of name")
         description: string;
