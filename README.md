@@ -51,3 +51,18 @@ Reference links - python prototype project
 - result -> online Swagger view with REST API 
 - Result: \tspec\tsp-output\@typespec\openapi3\openapi.v0.1.yaml
 - Can generate server code for Python, Go, Java, Nodejs
+
+### Vue
+- Structure
+├── dist/ <- Vue-CLI output
+    └── index.html
+├── src/ <- Vue source files
+└── app.py
+- $ npm create vue@latest
+- name: src
+- $ cd src | npm install
+- $ npm i @vueuse/core
+- $ npm run dev
+
+
+- $ npm run build
