@@ -1,14 +1,14 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <div class="wrapper">
-      <HelloWorld msg="Прототип!" />
-    </div>
-  </header>
+  <router-view />
 </template>
 
-<style scoped>
-</style>
+<script setup lang="ts">
+import HelloWorld from './components/HelloWorld'
+</script>
+
+export default {
+  components: {
+    HelloWorld
+  }
+}
+</script>

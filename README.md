@@ -21,7 +21,9 @@ Reference links - python prototype project
 - Run server: $ uvicorn app.app:app --host 0.0.0.0 --port 8080
 - Swagger: http://127.0.0.1:8080/docs
 - Run tests: $ python .\test\test_ml_iris.py 
-
+- Change Poetry to UV
+- install uv
+- uvx migrate-to-uv
 
 ### TypeSpec 
 - playground for experiment https://typespec.io/playground/
@@ -61,8 +63,14 @@ Reference links - python prototype project
 - $ npm create vue@latest
 - name: src
 - $ cd src | npm install
-- $ npm i @vueuse/core
+- Ставим либу обертку для получения данных вместо fetch 
+  $ npm i @vueuse/core
 - $ npm run dev
+  Open:  http://localhost:5173/
+- Install Tailwind 
+  $ npm install -D tailwindcss@3 postcss autoprefixer
+  $ npx tailwindcss init -p
+  created  tailwind.config.js + postcss.config.js + configure by https://v2.tailwindcss.com/docs/guides/vue-3-vite
 
 
 - $ npm run build
