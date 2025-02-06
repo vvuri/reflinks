@@ -24,6 +24,8 @@ Reference links - python prototype project
 - Change Poetry to UV
 - install uv
 - uvx migrate-to-uv
+- Add linter: $ uv add --dev ruff
+- Add pytest: $ uv add --dev pytest
 
 ### TypeSpec 
 - playground for experiment https://typespec.io/playground/
