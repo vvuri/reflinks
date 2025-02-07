@@ -26,6 +26,11 @@ Reference links - python prototype project
 - uvx migrate-to-uv
 - Add linter: $ uv add --dev ruff
 - Add pytest: $ uv add --dev pytest
+- Code check https://github.com/astral-sh/ruff
+- $ uvx ruff check
+- pyright for check code https://microsoft.github.io/pyright/#/
+- $ uv add --dev pyright
+- $ pyright
 
 ### TypeSpec 
 - playground for experiment https://typespec.io/playground/
@@ -73,6 +78,8 @@ Reference links - python prototype project
   $ npm install -D tailwindcss@3 postcss autoprefixer
   $ npx tailwindcss init -p
   created  tailwind.config.js + postcss.config.js + configure by https://v2.tailwindcss.com/docs/guides/vue-3-vite
-
+- vue-router
+  https://vue-router-ru.netlify.app/guide/
+- 
 
 - $ npm run build
