@@ -12,3 +12,6 @@ class UrlLink(BaseModel):
                 "id": "16fd2706-8baf-433b-82eb-8c7fada847da",
             }
         }
+
+class ClientUrlLink(BaseModel):
+    url: HttpUrl

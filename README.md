@@ -31,6 +31,14 @@ Reference links - python prototype project
 - pyright for check code https://microsoft.github.io/pyright/#/
 - $ uv add --dev pyright
 - $ pyright
+- Upgrade pip
+  $ uv pip install --upgrade pip
+- Upgrade all packages
+  $ uv lock --upgrade
+  $ uv sync
+- Add logger 
+  $ uv add loguru
+
 
 ### TypeSpec 
 - playground for experiment https://typespec.io/playground/

@@ -7,7 +7,7 @@ from routes.links import link_router
 
 app = FastAPI()
 
-app.include_router(link_router,  prefix="/api/links")
+app.include_router(link_router,  prefix="/api")
 
 @app.get('/api/version')
 def version() -> dict:
