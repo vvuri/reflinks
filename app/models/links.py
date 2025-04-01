@@ -13,5 +13,6 @@ class UrlLink(BaseModel):
             }
         }
 
+
 class ClientUrlLink(BaseModel):
     url: HttpUrl

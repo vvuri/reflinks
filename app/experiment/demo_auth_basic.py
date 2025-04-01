@@ -12,7 +12,7 @@ security = HTTPBasic()
 
 @router.get("/basic-auth-test/")
 def demo_basic_auth_test(
-        credentials: Annotated[HTTPBasicCredentials, Depends(security)],
+    credentials: Annotated[HTTPBasicCredentials, Depends(security)],
 ):
     return {
         "message": "Hi!",
@@ -21,12 +21,12 @@ def demo_basic_auth_test(
     }
 
 
-username_to_passwords ={
+username_to_passwords = {
     "admin": "admin",
     "user": "123",
 }
 
-token_to_username ={
+token_to_username = {
     "64f13d910dc52a9d40798bc3825d2a42": "admin",
     "2c5bc3e7c04a9a56ba5c69cba283a505": "123",
 }
@@ -53,9 +53,7 @@ def get_auth_username_credentials(
     return credentials.username
 
 
-def get_auth_username_header(
-    static_token: str = Header(alias="x-auth-token")
-) -> str:
+def get_auth_username_header(static_token: str = Header(alias="x-auth-token")) -> str:
     if username := token_to_username.get(static_token):
         return username
 
@@ -67,7 +65,7 @@ def get_auth_username_header(
 
 @router.get("/basic-auth/")
 def demo_basic_auth_credentials(
-       auth_username: str = Depends(get_auth_username_credentials)
+    auth_username: str = Depends(get_auth_username_credentials),
 ):
     return {
         "message": f"Hi {auth_username}!",
@@ -75,9 +73,7 @@ def demo_basic_auth_credentials(
 
 
 @router.get("/basic-auth-header/")
-def demo_basic_auth_header(
-       username: str = Depends(get_auth_username_header)
-):
+def demo_basic_auth_header(username: str = Depends(get_auth_username_header)):
     return {
         "message": f"Hi {username}!",
     }
@@ -92,7 +88,7 @@ def generate_session_id() -> str:
 
 
 def get_session_data(
-        session_id: str = Cookie(alias=COOKIE_ID_KEY),
+    session_id: str = Cookie(alias=COOKIE_ID_KEY),
 ) -> dict:
     if session_id not in COOKIES:
         raise HTTPException(
@@ -104,9 +100,9 @@ def get_session_data(
 
 @router.post("/login-cookie/")
 def auth_login_cookie(
-       response: Response,
-       # auth_username: str = Depends(get_auth_username_credentials)
-       auth_username: str = Depends(get_auth_username_header)
+    response: Response,
+    # auth_username: str = Depends(get_auth_username_credentials)
+    auth_username: str = Depends(get_auth_username_header),
 ):
     session_id = generate_session_id()
     response.set_cookie(COOKIE_ID_KEY, session_id)
@@ -118,9 +114,7 @@ def auth_login_cookie(
 
 
 @router.get("/check-cookie")
-def check_login_cookie(
-        user_session_date: dict = Depends(get_session_data)
-):
+def check_login_cookie(user_session_date: dict = Depends(get_session_data)):
     username = user_session_date["username"]
     return {
         "user": username,
@@ -130,9 +124,9 @@ def check_login_cookie(
 
 @router.get("/logout-cookie")
 def logout_login_cookie(
-        response: Response,
-        session_id: str = Cookie(alias=COOKIE_ID_KEY),
-        user_session_date: dict = Depends(get_session_data),
+    response: Response,
+    session_id: str = Cookie(alias=COOKIE_ID_KEY),
+    user_session_date: dict = Depends(get_session_data),
 ):
     username = user_session_date["username"]
     COOKIES.pop(session_id)

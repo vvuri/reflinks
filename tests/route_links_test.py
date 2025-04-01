@@ -10,7 +10,7 @@ client = TestClient(app)
 def test_read_main():
     response = client.get("/api/version")
     assert response.status_code == 200
-    assert response.json() == {'ver': '0.0.1'}
+    assert response.json() == {"ver": "0.0.1"}
 
 
 def test_get_link_by_id():

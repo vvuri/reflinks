@@ -6,27 +6,27 @@ app = FastAPI()
 model_iris = IrisModel()
 
 
-@app.get('/')
+@app.get("/")
 def index():
-    return {'message': 'Hello, stranger'}
+    return {"message": "Hello, stranger"}
 
 
-@app.get('/{name}')
+@app.get("/{name}")
 def get_name(name: str):
-    return {'message': f'Hello, {name}'}
+    return {"message": f"Hello, {name}"}
 
 
-@app.post('/predict_iris')
+@app.post("/predict_iris")
 def predict_species(iris: IrisSpecies):
     data = iris.dict()
     prediction, probability = model_iris.predict_species(
-        data['sepal_length'], data['sepal_width'], data['petal_length'], data['petal_width']
+        data["sepal_length"],
+        data["sepal_width"],
+        data["petal_length"],
+        data["petal_width"],
     )
-    return {
-        'prediction': prediction,
-        'probability': probability
-    }
+    return {"prediction": prediction, "probability": probability}
 
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
