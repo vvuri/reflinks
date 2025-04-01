@@ -27,9 +27,8 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Lint with Ruff
-        run: |
-          ruff --format=github --target-version=py310 .
+        run: uv run ruff --format=github --target-version=py312 .
         continue-on-error: true
 
-      - name: Test with pytest
-        run: pytest -v -s
+      - name: Run tests
+        run: uv run pytest tests
