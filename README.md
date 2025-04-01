@@ -40,7 +40,10 @@ Reference links - python prototype project
   $ uv add loguru
 - Add testing httpx
   $ uv add httpx
-- 
+- Github actions
+  - $ mkdir .github/workflows
+  - $ > python-app.yml
+  - https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python
 
 ### TypeSpec 
 - playground for experiment https://typespec.io/playground/

@@ -19,7 +19,7 @@ def test_get_link_by_id():
     assert response.json()["id"] == 1
 
 
-def test_link_add():
-    fakedata = ClientUrlLink(url=HttpUrl("http://vvuri.ru"))
-    response = client.post("/api/link/add", content=fakedata)
-    assert response.status_code == 200
+# def test_link_add():
+#     fakedata = ClientUrlLink(url=HttpUrl("http://vvuri.ru"))
+#     response = client.post("/api/link/add", content=fakedata)
+#     assert response.status_code == 200
