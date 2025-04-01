@@ -1,9 +1,9 @@
-from pydantic import BaseModel, HttpUrl, UUID4
+from pydantic import BaseModel, HttpUrl
 
 
 class UrlLink(BaseModel):
     url: HttpUrl
-    id: UUID4
+    id: int
 
     class Config:
         json_schema_extra = {
