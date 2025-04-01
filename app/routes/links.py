@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException, status
 import uuid
 from loguru import logger
 
-from ..models.links import UrlLink, ClientUrlLink
+from app.models.links import UrlLink, ClientUrlLink
 
 link_router = APIRouter(tags=["Ref Links"])
 
@@ -11,16 +11,16 @@ def get_new_id():
     return uuid.uuid4()
 
 
-@link_router.get("/image/{link_id}")
-def get_image(link_id: uuid) -> Dict:
-    logger.info("get_image:", link_id)
-    return {"message":"image"}
+# @link_router.get("/image/{link_id}")
+# def get_image(link_id: uuid) -> Dict:
+#     logger.info("get_image:", link_id)
+#     return {"message":"image"}
 
 
-@link_router.get("/link/{link_id}")
-def get_link(link_id: uuid) -> Dict:
-    logger.info("get_link:", link_id)
-    return {"id": "A-1", "urt": "u1"}
+# @link_router.get("/link/{link_id}")
+# def get_link(link_id: uuid) -> Dict:
+#     logger.info("get_link:", link_id)
+#     return {"id": "A-1", "urt": "u1"}
 
 
 @link_router.post("/link/add")

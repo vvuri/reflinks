@@ -38,7 +38,9 @@ Reference links - python prototype project
   $ uv sync
 - Add logger 
   $ uv add loguru
-
+- Add testing httpx
+  $ uv add httpx
+- 
 
 ### TypeSpec 
 - playground for experiment https://typespec.io/playground/
